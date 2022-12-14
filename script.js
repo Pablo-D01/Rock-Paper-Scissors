@@ -3,8 +3,18 @@ let playerScore = 0 ;
 let computerScore = 0;
 let roundCounter = 0;
 
+const output = document.querySelector("#output");
+output.textContent = "May the Best Person Win!";
+
+const results = document.querySelector("#results");
+function upDateResults(){
+    results.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+}
 
 
+function tie() {output.textContent = `Its a tie! ` };
+function playerWin() {output.textContent = `You won this round ` };
+function computerWin() {output.textContent = `You lost this round ` };
 
 
 function getComputerChoice(){
@@ -16,58 +26,35 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection) {
     
-    if (playerSelection === "Rock" && computerSelection === "Rock") { return undefined }
-    else if (playerSelection ==="Rock" && computerSelection === "Paper" ) {return computerScore = computerScore +1 }
-    else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) {return playerScore = playerScore +1 }
+    if (playerSelection === "Rock" && computerSelection === "Rock") {tie(); return undefined ; }
+    else if (playerSelection ==="Rock" && computerSelection === "Paper" ) {computerWin(); return computerScore = computerScore +1 }
+    else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) { playerWin(); return playerScore = playerScore +1 }
 
-    else if (playerSelection === "Paper" && computerSelection ==="Rock") {return playerScore = playerScore +1  }
-    else if (playerSelection === "Paper" && computerSelection ==="Paper") { return undefined  }
-    else if (playerSelection === "Paper" && computerSelection ==="Scissors") {return computerScore = computerScore +1  }
+    else if (playerSelection === "Paper" && computerSelection ==="Rock") { playerWin(); return playerScore = playerScore +1  }
+    else if (playerSelection === "Paper" && computerSelection ==="Paper") { tie(); return undefined  }
+    else if (playerSelection === "Paper" && computerSelection ==="Scissors") {computerWin(); return computerScore = computerScore +1  }
 
     else if (playerSelection === "Scissors" && computerSelection ==="Rock") {return computerScore = computerScore +1 }
-    else if (playerSelection === "Scissors" && computerSelection ==="Paper") {return playerScore = playerScore +1}
-    else if (playerSelection === "Scissors" && computerSelection ==="Scissors") { return undefined}
+    else if (playerSelection === "Scissors" && computerSelection ==="Paper") { playerWin(); return playerScore = playerScore +1}
+    else if (playerSelection === "Scissors" && computerSelection ==="Scissors") { tie(); return undefined}
     
-  }
-   
-
-
-
-
-  function gameAuto(playerSelection){
-    computerScore = 0 ;
-    playerScore = 0 ;
-    for (let i = 0 ; i < 15; i++ ) {
-        let computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-        if ( playerScore === 5 ) { alert("Player wins !"); break }
-        else if (computerScore === 5 ) {alert("Computer wins !"); break}
-           
-    }
-    console.log("pc: ", computerScore)
-    console.log("player: ", playerScore)
-    console.log('Rounds played: ', roundCounter)
-  }
-
-
-
+}
 
 function showResults(){
     
     alert("Rounds played: "+ roundCounter);
     computerScore = 0 ;
     playerScore = 0 ;
-    roundCounter = 0 ;
-    
+    roundCounter = 0 ;  
 }
+
 
 
 function game(playerSelection){
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
-    // console.log("pc: ", computerScore)
-    // console.log("player: ", playerScore)
     roundCounter = roundCounter +1 ;
+    upDateResults(); 
 
     if ( playerScore === 5 ) { 
         alert("Player wins !");
