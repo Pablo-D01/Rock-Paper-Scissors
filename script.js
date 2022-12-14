@@ -14,4 +14,25 @@ function getComputerChoice(){
     }
 }
 
+function playRound(playerSelection, computerSelection) {
+    console.log('PC:', computerSelection)
+    console.log('PLAYER:', playerSelection)
+
+    if (playerSelection === "Rock" && computerSelection === "Rock") { return "TIE!" }
+    else if (playerSelection ==="Rock" && computerSelection === "Paper" ) { return "Computer Wins"  }
+    else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) {return "Player wins"  }
+
+    else if (playerSelection === "Paper" && computerSelection ==="Rock") {return "Player wins"  }
+    else if (playerSelection === "Paper" && computerSelection ==="Paper") {return "TIE!"  }
+    else if (playerSelection === "Paper" && computerSelection ==="Scissors") {return "Computer Wins"  }
+
+    else if (playerSelection === "Scissors" && computerSelection ==="Rock") {return "Computer Wins" }
+    else if (playerSelection === "Scissors" && computerSelection ==="Paper") {return "Player wins"}
+    else if (playerSelection === "Scissors" && computerSelection ==="Scissors") {return "TIE!"}
+    
+  }
+   
+  const playerSelection = "Rock";
+  const computerSelection = getComputerChoice();
+  console.log(playRound(playerSelection, computerSelection));
 
