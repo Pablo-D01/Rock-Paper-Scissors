@@ -1,0 +1,16 @@
+body,html {
+    background: url('./background2.png') bottom center;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+  }
+.container{
+    height: 100%;
+    top: 50%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column ;
+}

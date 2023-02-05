@@ -24,21 +24,38 @@ function getComputerChoice(){
     else { return "Scissors" }
 }
 
+// function playRound(playerSelection, computerSelection) {
+    
+//     if (playerSelection === "Rock" && computerSelection === "Rock") {tie(); return undefined ; }
+//     else if (playerSelection ==="Rock" && computerSelection === "Paper" ) {computerWin(); return computerScore = computerScore +1 }
+//     else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) { playerWin(); return playerScore = playerScore +1 }
+
+//     else if (playerSelection === "Paper" && computerSelection ==="Rock") { playerWin(); return playerScore = playerScore +1  }
+//     else if (playerSelection === "Paper" && computerSelection ==="Paper") { tie(); return undefined  }
+//     else if (playerSelection === "Paper" && computerSelection ==="Scissors") {computerWin(); return computerScore = computerScore +1  }
+
+//     else if (playerSelection === "Scissors" && computerSelection ==="Rock") {return computerScore = computerScore +1 }
+//     else if (playerSelection === "Scissors" && computerSelection ==="Paper") { playerWin(); return playerScore = playerScore +1}
+//     else if (playerSelection === "Scissors" && computerSelection ==="Scissors") { tie(); return undefined}
+    
+// }
+
 function playRound(playerSelection, computerSelection) {
     
-    if (playerSelection === "Rock" && computerSelection === "Rock") {tie(); return undefined ; }
-    else if (playerSelection ==="Rock" && computerSelection === "Paper" ) {computerWin(); return computerScore = computerScore +1 }
-    else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) { playerWin(); return playerScore = playerScore +1 }
-
-    else if (playerSelection === "Paper" && computerSelection ==="Rock") { playerWin(); return playerScore = playerScore +1  }
-    else if (playerSelection === "Paper" && computerSelection ==="Paper") { tie(); return undefined  }
-    else if (playerSelection === "Paper" && computerSelection ==="Scissors") {computerWin(); return computerScore = computerScore +1  }
-
-    else if (playerSelection === "Scissors" && computerSelection ==="Rock") {return computerScore = computerScore +1 }
-    else if (playerSelection === "Scissors" && computerSelection ==="Paper") { playerWin(); return playerScore = playerScore +1}
-    else if (playerSelection === "Scissors" && computerSelection ==="Scissors") { tie(); return undefined}
+    if (playerSelection === "Rock" && computerSelection === "Rock" 
+        || playerSelection === "Paper" && computerSelection ==="Paper" 
+        || playerSelection === "Scissors" && computerSelection ==="Scissors" ) {tie(); return undefined ; }
     
+    else if (playerSelection ==="Rock" && computerSelection === "Paper" 
+        || playerSelection === "Paper" && computerSelection ==="Scissors" 
+        || playerSelection === "Scissors" && computerSelection ==="Rock") {computerWin(); return computerScore = computerScore +1 }
+    
+    else if (playerSelection ==="Rock" && computerSelection === "Scissors" 
+        || playerSelection === "Paper" && computerSelection ==="Rock" 
+        || playerSelection === "Scissors" && computerSelection ==="Paper" ) { playerWin(); return playerScore = playerScore +1 }
 }
+
+
 
 function showResults(){
     
@@ -46,6 +63,8 @@ function showResults(){
     computerScore = 0 ;
     playerScore = 0 ;
     roundCounter = 0 ;  
+    output.textContent = "May the Best Person Win!";
+    upDateResults();
 }
 
 
