@@ -4,7 +4,7 @@ let computerScore = 0;
 let roundCounter = 0;
 
 const output = document.querySelector("#output");
-output.textContent = "May the Best Person Win!";
+output.textContent = "Choose your weapon!";
 
 const rounds = document.querySelector("#rounds");
 const results = document.querySelector("#results");
@@ -27,21 +27,7 @@ function getComputerChoice(){
     else { return "Scissors" }
 }
 
-// function playRound(playerSelection, computerSelection) {
-    
-//     if (playerSelection === "Rock" && computerSelection === "Rock") {tie(); return undefined ; }
-//     else if (playerSelection ==="Rock" && computerSelection === "Paper" ) {computerWin(); return computerScore = computerScore +1 }
-//     else if (playerSelection ==="Rock" && computerSelection === "Scissors" ) { playerWin(); return playerScore = playerScore +1 }
 
-//     else if (playerSelection === "Paper" && computerSelection ==="Rock") { playerWin(); return playerScore = playerScore +1  }
-//     else if (playerSelection === "Paper" && computerSelection ==="Paper") { tie(); return undefined  }
-//     else if (playerSelection === "Paper" && computerSelection ==="Scissors") {computerWin(); return computerScore = computerScore +1  }
-
-//     else if (playerSelection === "Scissors" && computerSelection ==="Rock") {return computerScore = computerScore +1 }
-//     else if (playerSelection === "Scissors" && computerSelection ==="Paper") { playerWin(); return playerScore = playerScore +1}
-//     else if (playerSelection === "Scissors" && computerSelection ==="Scissors") { tie(); return undefined}
-    
-// }
 
 function playRound(playerSelection, computerSelection) {
     
