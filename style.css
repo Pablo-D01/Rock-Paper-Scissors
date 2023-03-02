@@ -1,9 +1,13 @@
+@font-face {
+  font-family: "TorukscRegular";
+  src: url("/TorukscRegular.ttf");
+}
+
 body,html {
     background: url('./background2.png')  center;
-
+    font-family: TorukscRegular, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     height: 100%;
   }
 .container{

@@ -6,9 +6,12 @@ let roundCounter = 0;
 const output = document.querySelector("#output");
 output.textContent = "May the Best Person Win!";
 
+const rounds = document.querySelector("#rounds");
 const results = document.querySelector("#results");
 function upDateResults(){
     results.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    rounds.textContent = `Rounds played: ${roundCounter}`;
+
 }
 
 
